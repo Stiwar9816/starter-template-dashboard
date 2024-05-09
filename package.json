@@ -1,12 +1,17 @@
 {
   "name": "starter-template-vuetify",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": {
+    "name": "Stiwar Asprilla"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:unit": "vitest run",
+    "test:watch": "vitest watch"
   },
   "dependencies": {
     "pinia": "^2.1.7",
