@@ -13,10 +13,47 @@ export const useLayoutStore = defineStore('layout', () => {
       route: '/home'
     },
     {
-      name: 'Usuarios',
+      name: 'Clientes',
       icon: 'mdi-account-group',
-      route: '/users'
+      route: '/clients'
+    },
+    {
+      name: 'Reservas',
+      icon: 'mdi-calendar-clock',
+      route: '/booking'
+    },
+    {
+      name: 'Saldos',
+      icon: 'mdi-calculator',
+      route: '/balance'
+    },
+    {
+      name: 'Caja',
+      icon: 'mdi-cash-multiple',
+      route: '/cash'
     }
   ]
-  return { drawer, rail, routes, imageProfile }
+  const services: Array<Routes> = [
+    {
+      name: 'Inventario',
+      icon: 'mdi-package-variant',
+      route: '/inventory'
+    },
+    {
+      name: 'Gastos',
+      icon: 'mdi-credit-card',
+      route: '/expenses'
+    },
+    {
+      name: 'Facturas de venta',
+      icon: 'mdi-file-document',
+      route: '/invoices'
+    },
+    {
+      name: 'Cartera',
+      icon: 'mdi-wallet',
+      route: '/wallet'
+    }
+  ]
+  return { drawer, rail, routes, services, imageProfile }
 })

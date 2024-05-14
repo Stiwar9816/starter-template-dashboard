@@ -5,7 +5,7 @@
     permanent
     color="deepteal100"
     v-model="storeLayout.drawer"
-    :rail="storeLayout.rail"
+    :rail="!storeLayout.rail"
     @click="storeLayout.rail = true"
   >
     <v-list nav>
@@ -21,12 +21,13 @@
         </template>
         {{ nameProfile }}
         <v-tooltip activator="parent" location="end" role="tooltip" aria-label="nameProfile">
-          {{nameProfile}}
+          {{ nameProfile }}
         </v-tooltip>
       </v-list-item>
     </v-list>
 
-    <v-divider></v-divider>
+    <v-divider/>
+
     <v-list density="comfortable" nav>
       <v-list-item
         v-for="item in storeLayout.routes"
@@ -38,11 +39,36 @@
         role="list"
       >
         {{ item.name }}
-        <v-tooltip activator="parent" location="end" role="tooltip" aria-label="{{ item.name }}">{{
-          item.name
-        }}</v-tooltip>
+        <v-tooltip activator="parent" location="end" role="tooltip" aria-label="{{ item.name }}">
+        {{item.name}}
+        </v-tooltip>
       </v-list-item>
-
+      <!-- Button services -->
+      <v-menu transition="slide-x-transition" location="end">
+        <template v-slot:activator="{ props }">
+          <v-list-item
+            v-bind="props"
+            prepend-icon="mdi-apps"
+            append-icon="mdi-chevron-right"
+          >
+            Servicios
+            <v-tooltip activator="parent" location="end">Servicios</v-tooltip>
+          </v-list-item>
+        </template>
+        <v-list bg-color="deepteal50" rounded max-width="250">
+          <v-list-item
+            v-for="(item, index) in storeLayout.services"
+            :key="index"
+            :title="item.name"
+            :value="item.name"
+            :prepend-icon="item.icon"
+            :to="item.route"
+          >
+            <v-tooltip activator="parent" location="end">{{ item.name }}</v-tooltip>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <!-- Logout -->
       <v-list-item
         prepend-icon="mdi-power-cycle"
         value="Logout"
@@ -50,7 +76,7 @@
         aria-label="cerrar_sesión"
       >
         <template v-slot:prepend>
-          <v-icon color="deepteal950" icon="mdi-logout"></v-icon>
+          <v-icon color="red-accent-4" icon="mdi-power"></v-icon>
         </template>
         Cerrar Sesión
         <v-tooltip activator="parent" location="end" role="tooltip" aria-label="cerrar sesión"
