@@ -7,7 +7,7 @@
     :no-data-text="props.noDataText"
     color="deepteal400"
     @input="emitModel"
-    multiple
+    :multiple="props.multiple"
   >
     <template v-slot:selection="{ item, index }">
       <v-chip v-if="index < 2">
@@ -31,6 +31,10 @@ const props = defineProps({
   noDataText: {
     type: String,
     default: 'No hay datos'
+  },
+  multiple: {
+    type: Boolean,
+    default: false
   },
   items: {
     type: Array,

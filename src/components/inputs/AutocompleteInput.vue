@@ -1,15 +1,13 @@
 <template>
-  <div>
-    <v-autocomplete
-      :label="props.label"
-      :items="props.items"
-      variant="underlined"
-      color="deepteal400"
-      no-data-text="¡No se encontraron coincidencias!"
-      clearable
-      flat
-    />
-  </div>
+  <v-autocomplete
+    :label="props.label"
+    :items="props.items"
+    variant="underlined"
+    color="deepteal400"
+    no-data-text="¡No se encontraron coincidencias!"
+    clearable
+    flat
+  />
 </template>
 
 <script setup lang="ts">

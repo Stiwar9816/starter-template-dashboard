@@ -1,4 +1,5 @@
-export type { WalletData } from './wallet';
+export type { ChartData, ChartOptions } from './chart'
+export type { WalletData } from './wallet'
 export type { InvoiceData } from './invoice'
 export type { ExpensesData } from './expense'
 export type { InventoryData } from './inventory'

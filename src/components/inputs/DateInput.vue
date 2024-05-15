@@ -1,20 +1,18 @@
 <template>
-  <div>
-    <v-date-input
-      v-model:model-value="modelTerm"
-      @input="emitModel"
-      :label="props.label"
-      color="deepteal400"
-      placeholder="dd/mm/yyyy"
-      prepend-icon=""
-      prepend-inner-icon="$calendar"
-      variant="underlined"
-      :cancel-text="props.cancelText"
-      :ok-text="props.okText"
-      :multiple="multiple"
-      clearable
-    ></v-date-input>
-  </div>
+  <v-date-input
+    v-model:model-value="modelTerm"
+    @input="emitModel"
+    :label="props.label"
+    color="deepteal400"
+    placeholder="dd/mm/yyyy"
+    prepend-icon=""
+    prepend-inner-icon="$calendar"
+    variant="underlined"
+    :cancel-text="props.cancelText"
+    :ok-text="props.okText"
+    :multiple="multiple"
+    clearable
+  ></v-date-input>
 </template>
 
 <script setup lang="ts">

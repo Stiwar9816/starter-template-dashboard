@@ -26,9 +26,12 @@
         />
       </v-col>
     </v-row>
+    <BarChart class="ma-4" chart-title="Ventas" />
   </div>
 </template>
 
 <script setup lang="ts">
 import CardHome from '@/components/cards/CardHome.vue'
+import BarChart from '@/components/charts/BarChart.vue'
+
 </script>
